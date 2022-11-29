@@ -8,6 +8,7 @@ import { AuthMiddleware } from './middleware/auth.middleware';
 import { AuthService } from './module/auth/auth.service';
 import { APP_GUARD } from '@nestjs/core';
 import { RolesGuard } from './guard/role.guard';
+import {username, password} from './config/index'
 
 @Module({
   imports: [HouseModule, AuthModule,
@@ -15,8 +16,8 @@ import { RolesGuard } from './guard/role.guard';
       type: 'postgres',
       host: 'localhost',
       port: 5432,
-      username: 'postgres',
-      password: 'Spee@105',
+      username,
+      password,
       database: 'task-manager',
       autoLoadEntities: true,
       synchronize: true
